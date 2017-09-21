@@ -1,0 +1,26 @@
+.social_navigation {
+  background-color: $social-navigation-background-color;
+  ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    float: right;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 11px;
+    padding: 10px 5px;
+    &:hover {
+      color: darken(#fff, 50%);
+    }
+  }
+}
+
+.social_navigation--darker {
+  background-color: $footer-background-darken-color;
+}

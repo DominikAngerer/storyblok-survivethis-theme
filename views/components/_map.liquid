@@ -1,0 +1,20 @@
+{{blok._editable}}
+<main id="main" role="main" class="game uk-margin-large-bottom">
+  <article class="uk-grid">
+    <div class="uk-width-1-1">
+      <h1>{{blok.title|default: story.name}}</h1>
+      <sub>Von: {{blok.author}} - {{story.published_at | date: "%d. %b %Y" }}</sub>
+    </div>
+    <div class="uk-width-medium-1-1 content">
+      {% if blok.featured_image != blank %}
+        <img src="{{blok.featured_image}}" alt="{{blok.featured_alt}}" class="uk-margin-bottom uk-width-1-1">
+      {% endif %}
+      
+      {% for item in blok.content %}
+        {% include item.component with blok: item %}
+      {% endfor %}
+    
+    </div>
+
+  </article>
+</main>

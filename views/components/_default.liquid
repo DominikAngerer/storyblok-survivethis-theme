@@ -1,0 +1,14 @@
+{{blok._editable}}
+<main id="main" role="main" class="patchnote uk-margin-large-bottom">
+  <article class="uk-grid">
+    <div class="uk-width-medium-2-3 content">
+  
+      {% for item in blok.content %}
+        {% include item.component with blok: item %}
+      {% endfor %}
+
+    </div>
+
+    {% include 'sidebar' %}
+  </article>
+</main>

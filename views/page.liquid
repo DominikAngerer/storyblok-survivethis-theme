@@ -1,0 +1,73 @@
+{% spaceless %}
+<!DOCTYPE html>
+<!--#if expr="$HTTP_COOKIE=/fonts\-loaded\=1/" -->
+<html lang="en" class="body--floaded">
+<!--#else -->
+<html lang="en">
+<!--#endif -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ story.name }} - Survivethis</title>
+
+  {% if params._storyblok %}
+    <meta name="searchblok" content="noindex">
+    <meta name="robots" content="noindex, nofollow">
+  {% endif %}
+
+  <meta name="canonical" content="{{canonical}}">
+
+  {%- include 'advanced_meta_tags' -%}
+
+  {% if proxy_mode %}
+    <link href="{{ 'assets/css/above.css' | asset_url }}" rel="stylesheet">
+  {% else %}
+    <style>{%- include 'above_fold_css' -%}</style>
+  {% endif %}
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <link rel="preload" id="stylesheet" href="{{ 'assets/css/below.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
+</head>
+<body>
+  {% include 'fbjs' %}
+
+  <a href="#main" hidden>Skip to main content</a>
+
+  <div class="root">
+    {% include 'social_navigation' %}
+    <div class="page uk-container uk-container-center">
+      {% include 'navigation' %}
+      {% include 'header' %}
+      {% include story.content.component with blok: story.content, title: story.name, date: story.created_at %}
+    </div>
+  </div>
+  {% include 'footer' %}
+  {% include 'social_navigation' with class: 'social_navigation--darker' %}
+
+
+  <script type="text/javascript" src="{{ 'assets/js/scripts.js' | asset_url }}"></script>
+
+  {% if story.content._editable %}
+    <script type="text/javascript" src="//app.storyblok.com/storyblok-latest.js"></script>
+    <script type="text/javascript">
+
+      storyblok.init({
+        accessToken: '{{ public_token }}'
+      });
+
+      storyblok.on('change', function() {
+        location.reload(true);
+      });
+
+      storyblok.pingEditor(function() {
+        if (storyblok.inEditor) {
+          storyblok.enterEditmode();
+        }
+      });
+
+    </script>
+  {% endif %}
+</body>
+</html>
+{% endspaceless %}

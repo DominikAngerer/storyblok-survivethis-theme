@@ -1,0 +1,58 @@
+.ratings {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  li {
+    display: block;
+    padding-bottom: 10px;
+    border: 1px solid #e4e4e4;
+    padding: 20px;
+    &:after {
+      content: '';
+      margin-top: 5px;
+      display: block;
+      height: 20px;
+      background: $brand-color;
+    }
+  }
+}
+
+[data-rating="1"]:after {
+  width: 10%;
+}
+
+[data-rating="2"]:after {
+  width: 20%;
+}
+
+[data-rating="3"]:after {
+  width: 30%;
+}
+
+[data-rating="4"]:after {
+  width: 40%;
+}
+
+[data-rating="5"]:after {
+  width: 50%;
+}
+
+[data-rating="6"]:after {
+  width: 60%;
+}
+
+[data-rating="7"]:after {
+  width: 70%;
+}
+
+[data-rating="8"]:after {
+  width: 80%;
+}
+
+[data-rating="9"]:after {
+  width: 90%;
+}
+
+[data-rating="10"]:after {
+  width: 90%;
+}

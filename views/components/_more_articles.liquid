@@ -1,0 +1,13 @@
+{% set random_news_bottom from stories starts_with:'de', per_page:5, sort_by:'random():asc' %}
+<ul class="more_articles">
+  {% for news in random_news_bottom.data %}
+    {% if news.id != story.id and news.content.featured_image != blank %}
+    <li>
+      <a href="/{{ news.full_slug }}">
+        <img src="{{ news.content.featured_image | resize:'353x' }}" alt="{{ news.content.featured_alt }}" class="uk-width-1-1">
+        <span>{{ news.content.title | default: news.name }}</span>
+      </a>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>

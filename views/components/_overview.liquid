@@ -1,0 +1,56 @@
+{{blok._editable}}
+<main id="main" role="main" class="overview uk-margin-large-bottom">
+  <article class="uk-grid">
+    <div class="uk-width-1-1 uk-margin-large-bottom">
+      <h1 class="uk-margin-bottom">{{blok.title|default:story.name}}</h1>
+      {% set newest_overall from stories starts_with: story.full_slug, per_page:5 %}
+           
+        <div class="uk-grid uk-grid-collapse">
+          
+          <div class="uk-width-small-1-1 uk-width-medium-1-2 uk-width-large-1-2">
+            
+            <img src="{{newest_overall.data[0].content.featured_image | resize:'566x318'}}" class="uk-width-1-1" alt="{{newest_overall.data[0].content.title}}">
+          
+          </div>
+
+          <div class="uk-width-small-1-1 uk-width-medium-1-2 uk-hidden-large ">
+            
+            <img src="{{newest_overall.data[1].content.featured_image | resize:'566x318'}}" class="uk-width-1-1" alt="{{newest_overall.data[1].content.title}}">
+              
+          </div>
+
+          <div class="uk-width-large-1-2 uk-hidden-medium uk-hidden-small">
+            <div class="uk-grid uk-grid-collapse">
+              <div class="uk-width-large-1-2">
+                <img src="{{newest_overall.data[1].content.featured_image | resize:'283x159'}}" class="uk-width-1-1" alt="{{newest_overall.data[1].content.title}}">
+              </div>
+              <div class="uk-width-large-1-2">
+                <img src="{{newest_overall.data[2].content.featured_image | resize:'283x159'}}" class="uk-width-1-1" alt="{{newest_overall.data[2].content.title}}">
+              </div>
+              <div class="uk-width-large-1-2">
+                <img src="{{newest_overall.data[3].content.featured_image | resize:'283x159'}}" class="uk-width-1-1" alt="{{newest_overall.data[3].content.title}}">
+              </div>
+              <div class="uk-width-large-1-2">
+                <img src="{{newest_overall.data[4].content.featured_image | resize:'283x159'}}" class="uk-width-1-1" alt="{{newest_overall.data[4].content.title}}">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+
+    <div class="uk-width-medium-2-3 content">
+      
+      <div>
+        Random Artikel 1 
+      </div>
+
+      <div>
+        Newest News 1
+      </div>
+
+    </div>
+    {% include 'sidebar' %}
+  </article>
+</main>

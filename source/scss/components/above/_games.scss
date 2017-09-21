@@ -1,0 +1,19 @@
+.games {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.games a {
+  color: #000;
+  display:inline-block;
+  margin-bottom: 20px;
+  span {
+    display: inline-block;
+    // padding-top: 5px;
+    line-height: 1.7;
+    text-decoration: underline;
+  }
+}
+

@@ -1,0 +1,19 @@
+.markdown {
+  ul {
+    margin-bottom: 26px;  
+  }
+  li {
+    padding-bottom: 6px;
+    line-height: 28px;
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  *:first-child {
+    margin-top:0px;
+  }
+
+  & + .markdown {
+    margin-top: 15px;
+  }
+}

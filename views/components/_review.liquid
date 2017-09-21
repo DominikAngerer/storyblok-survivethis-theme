@@ -1,0 +1,73 @@
+{{blok._editable}}
+<main id="main" role="main" class="review uk-margin-large-bottom">
+  <article class="uk-grid">
+    <div class="uk-width-1-1">
+      <h1>{{blok.title}}</h1>
+      <sub>Von: {{blok.author}} - {{story.published_at | date: "%d. %b %Y" }}</sub>
+    </div>
+    <div class="uk-width-medium-2-3 content">
+      <img src="{{blok.featured_image}}" alt="{{blok.featured_alt}}" class="uk-margin-bottom uk-width-1-1">
+      
+      {% for item in blok.content %}
+        {% include item.component with blok: item %}
+      {% endfor %}
+
+      <ul class="ratings">
+        {% assign average = 0 %}
+        {% for rating in blok.ratings %}
+           {{rating._editable}}
+          <li data-rating="{{rating.points}}">{{rating.label}}<span class="uk-float-right">{{rating.points}}</span></li> 
+          {% assign average = average | plus: rating.points %}
+        {% endfor %}
+      </ul>
+
+      <div class="summary uk-grid uk-margin-top">
+        <div class="uk-width-2-3 ">
+          <h3>Zusammenfassung</h3>
+          {{blok.summary}}
+        </div>
+        <div class="uk-width-1-3">
+          <span class="summary__rating">
+            {% assign average = average | divided_by: blok.ratings.size %}
+            {{ average }}
+          </span>
+          <span class="summary__stars">
+            {% assign iterate_to = average | plus: 1 | divided_by: 2 %}
+            {% for i in (1..iterate_to) %}★{% endfor %}{% for i in (iterate_to..4) %}☆{% endfor %}
+          </span>
+          <span class="summary__points">Gesamtpunkte</span>
+        </div>
+      </div>
+
+    </div>
+
+    {% include 'sidebar' %}
+  </article>
+</main>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "image": "{{blok.content.featured_image}}",
+  "name": "{{blok.content.title}}",
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5"
+    },
+    "name": "{{blok.content.title}}",
+    "author": {
+      "@type": "Person",
+      "name": "{{blok.author}}"
+    },
+    "datePublished": "{{ story.published_at | date: '%Y-%m-%d' }}",
+    "reviewBody": "{{ blok.content.summary }}.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "survivethis"
+    }
+  }
+}
+</script>
