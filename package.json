@@ -29,7 +29,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "repository": "https://github.com/storyblok/quickstart.git",
-  "author": "Alexander Feiglstorfer <delooks@gmail.com>",
+  "author": "Dominik Angerer <dominikangerer1@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "uikit": "^2.27.4",
