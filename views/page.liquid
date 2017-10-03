@@ -30,10 +30,9 @@
   <link rel="preload" id="stylesheet" href="{{ 'assets/css/below.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
 </head>
 <body>
-  {% include 'fbjs' %}
   {% set global from story id:'de/settings' %}
 
-  <a href="#main" hidden>Skip to main content</a>
+  {% include 'adscripts' %}
 
   <div class="root">
     {% include 'social_navigation' %}
@@ -43,12 +42,14 @@
       {% include story.content.component with blok: story.content, title: story.name, date: story.created_at %}
     </div>
   </div>
+
   {% include 'footer' %}
   {% include 'social_navigation' with class: 'social_navigation--darker' %}
   {% include 'back_to_top' %}
 
 
   <script type="text/javascript" src="{{ 'assets/js/scripts.js' | asset_url }}"></script>
+
 
   {% if story.content._editable %}
     <script type="text/javascript" src="//app.storyblok.com/storyblok-latest.js"></script>

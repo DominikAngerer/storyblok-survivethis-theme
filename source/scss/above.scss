@@ -7,3 +7,18 @@
 
 @import '../../node_modules/uikit/dist/scss/core/utility.scss';
 @import '../../node_modules/uikit/dist/scss/core/grid.scss';
+
+#nn_skin {
+ width: 1780px;
+ height: 970px;
+ z-index: 1;
+ position: fixed;
+ top: 0px;
+ left: 50%;
+ margin-left: -890px;
+}
+
+.root {
+ position: relative;
+ z-index: 2;
+}

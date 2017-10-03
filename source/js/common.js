@@ -23,26 +23,20 @@ Promise.all([
 })
 
 var back_to_top = document.querySelector('.back_to_top');
+var below = false;
 
-var initialized = false
 var initOnScroll = function () {
   let posY = window.pageYOffset || document.documentElement.scrollTop
-  if (!initialized) {
-
+  if (!below) {
     if (posY > 350) {
-      initialized = true
-
-      // init twitch stream
-      var twitch = document.querySelector('#sidebar_twitch');
-      twitch.src = twitch.getAttribute('data-src');
+      back_to_top.classList.remove('uk-hidden')
+      below = true
     }
-  }
-  if(posY > 500) {
-    // show back to top button
-    back_to_top.classList.remove('uk-hidden');
   } else {
-    // hide back to top button
-    back_to_top.classList.add('uk-hidden');
+    if (posY < 350) {
+      back_to_top.classList.add('uk-hidden')
+      below = false
+    }
   }
 }
 
