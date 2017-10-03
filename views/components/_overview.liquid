@@ -1,44 +1,8 @@
 {{blok._editable}}
 <main id="main" role="main" class="overview uk-margin-large-bottom">
   <article class="uk-grid">
-    <div class="uk-width-1-1 uk-margin-large-bottom">
-      <h1 class="uk-margin-bottom">{{blok.title|default:story.name}}</h1>
-      {% set newest_overall from stories starts_with: story.full_slug, per_page: 5, is_startpage:false %}
-           
-        <div class="uk-grid uk-grid-small">
-          
-          <a class="uk-display-block uk-link-reset uk-width-small-1-1 uk-width-medium-1-2 uk-width-large-1-2" href="/{{newest_overall.data[0].full_slug}}">
-            
-            <img src="{{newest_overall.data[0].content.featured_image | resize:'508x376'}}" class="uk-width-1-1" alt="{{newest_overall.data[0].content.title}}">
-          
-          </a>
-
-          <a class="uk-display-block uk-link-reset uk-width-small-1-1 uk-width-medium-1-2 uk-hidden-large" href="/{{newest_overall.data[0].full_slug}}">
-            
-            <img src="{{newest_overall.data[1].content.featured_image | resize:'508x376'}}" class="uk-width-1-1" alt="{{newest_overall.data[1].content.title}}">
-              
-          </a>
-
-          <div class="uk-width-large-1-2 uk-hidden-medium uk-hidden-small">
-            <div class="uk-grid uk-grid-small">
-              <a class="uk-display-block uk-link-reset uk-width-large-1-2 uk-margin-small-bottom" href="/{{newest_overall.data[1].full_slug}}">
-                <img src="{{newest_overall.data[1].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[1].content.title}}">
-              </a>
-              <a class="uk-display-block uk-link-reset uk-width-large-1-2 uk-margin-small-bottom" href="/{{newest_overall.data[2].full_slug}}">
-                <img src="{{newest_overall.data[2].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[2].content.title}}">
-              </a>
-              <a class="uk-display-block uk-link-reset uk-width-large-1-2" href="/{{newest_overall.data[3].full_slug}}">
-                <img src="{{newest_overall.data[3].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[3].content.title}}">
-              </a>
-              <a class="uk-display-block uk-link-reset uk-width-large-1-2" href="/{{newest_overall.data[4].full_slug}}">
-                <img src="{{newest_overall.data[4].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[4].content.title}}">
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-    </div>
+    
+    {% include 'overview_teaser' %}
 
     <div class="uk-width-medium-2-3 content">  
       {% assign page = params.p ? 1 : params.p %}

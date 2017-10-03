@@ -1,10 +1,20 @@
 dependencies:
   lazysizes: 4.0.0-rc3
+  swiper: 4.0.0-beta.4
 packages:
+  /dom7/2.0.1:
+    resolution:
+      integrity: sha512-JwxgbCMasGW7pthSc0qRufkuZ6RAw9vZ66GSkcq2e+zpjFIGfXFMABdXpXrnItAQGd4zfj8vOfTI8wbZD1uSrQ==
   /lazysizes/4.0.0-rc3:
     resolution:
       integrity: sha512-FOvVLJ1qWJMuUyDu0z3aLdi4tffW4+W052GIqwHirUhzRJpsMfMOggKEeqsPMy8UeqvDYDzlQyK3DDFZvQpWQw==
+  /swiper/4.0.0-beta.4:
+    dependencies:
+      dom7: 2.0.1
+    resolution:
+      integrity: sha512-i6ytWsHkE4KTWC17UKxkIYe5xNkXX88MEKd2iIo3P+yRBVLOpK8uRiEVsI6zIAaMjKSoq1y0M/89yAtBVi1QHw==
 registry: 'http://registry.npmjs.org/'
 shrinkwrapVersion: 3
 specifiers:
   lazysizes: ^4.0.0-rc3
+  swiper: ^4.0.0-beta.4

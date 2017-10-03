@@ -1,3 +1,26 @@
+.overview_teaser {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  img {
+    transform: none;
+    display: block;
+    transition: transform 500ms ease;
+  }
+  &:hover img {
+    transform: scale(1.25);
+  }
+}
+
+.overview_teaser__title {
+  position: absolute;
+  bottom: 20px;
+  left:20px;
+  padding-right: 20px;
+  color: #fff;
+}
+
+
 .overview_item__headline {
   font-size: 22px;
   line-height: 28px;

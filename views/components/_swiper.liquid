@@ -1,0 +1,21 @@
+{{blok._editable}}
+<div class="image_swiper">
+  <div class="swiper-container uk-position-relative">
+    <div class="swiper-wrapper">
+     
+      {% for slide in blok.slides %}
+      <div class="swiper-slide">
+        
+        <figure class="uk-width-1-1">
+          <img src="{{slide.image}}" alt="{{slide.alt}}">
+          <figcaption>{{slide.caption}}</figcaption>
+        </figure>
+
+      </div>
+      {% endfor %}
+      
+    </div>
+    <button class="image_swiper__nav image_swiper--prev">Prev</button>
+    <button class="image_swiper__nav image_swiper--next">Next</button>
+  </div>
+</div>

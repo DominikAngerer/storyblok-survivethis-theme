@@ -1,0 +1,33 @@
+.image_swiper {
+  .swiper-wrapper {
+    position: relative;
+  }
+
+  figure {
+    margin: 0;
+    figcaption {
+      margin-top: 10px;
+      font-style: italic;
+    }
+  }
+  margin-bottom: 20px;
+}
+
+.image_swiper__nav {
+  z-index: 1;
+  display: block;
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+  top: 50%;
+  background: $brand-color;
+  border: 0px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.image_swiper--next {
+  right: 0px;
+}
