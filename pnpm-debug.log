@@ -1,0 +1,30 @@
+---
+  0 debug pnpm:progress: 
+    status: "installing"
+    pkg: 
+      rawSpec: ""
+      name: "Swiper"
+  1 debug pnpm:progress: 
+    status: "resolving"
+    pkg: 
+      rawSpec: ""
+      name: "Swiper"
+  2 debug pnpm:registry: "http request uri http://registry.npmjs.org/Swiper"
+  3 debug pnpm:registry: "http request no auth needed"
+  4 info pnpm:registry: "attempt registry request try #1 at 16:35:56"
+  5 debug pnpm:registry: "http request using bearer token for auth"
+  6 debug pnpm:registry: "http request id 6b54d66be328d26e"
+  7 debug pnpm:registry: "http request GET http://registry.npmjs.org/Swiper"
+  8 debug pnpm:registry: "http 404 http://registry.npmjs.org/Swiper"
+  9 debug pnpm:registry: "http headers { 'content-type': 'text/plain',\n  'cache-control': 'max-age=0',\n  'content-length': '2',\n  'accept-ranges': 'bytes',\n  date: 'Tue, 03 Oct 2017 14:35:57 GMT',\n  via: '1.1 varnish',\n  connection: 'keep-alive',\n  'x-served-by': 'cache-hhn1520-HHN',\n  'x-cache': 'MISS',\n  'x-cache-hits': '0',\n  'x-timer': 'S1507041357.913394,VS0,VE565',\n  vary: 'Accept-Encoding' }"
+  10 debug pnpm:progress: 
+    status: "error"
+    pkg: 
+      rawSpec: ""
+      name: "Swiper"
+  11 error pnpm: 
+    message: {}
+    err: 
+      name: "Error"
+      message: "Module 'Swiper' not found"
+      stack: "Error: Module 'Swiper' not found\n    at Object.<anonymous> (/usr/local/lib/node_modules/pnpm/lib/node_modules/package-store/lib/resolve/npm/index.js:64:23)\n    at throw (native)\n    at rejected (/usr/local/lib/node_modules/pnpm/lib/node_modules/package-store/lib/resolve/npm/index.js:5:65)"
