@@ -7,16 +7,17 @@
     <a class="uk-link-reset uk-width-small-1-1 uk-width-medium-1-2 uk-width-large-1-2" href="/{{newest_overall.data[0].full_slug}}">
       
       <div class="overview_teaser">
-        <img src="{{newest_overall.data[0].content.featured_image | resize:'508x374'}}" class="uk-width-1-1" alt="{{newest_overall.data[0].content.title}}">
-        <h2 class="overview_teaser__title">{{newest_overall.data[0].content.title}}</h2>
+        <img src="{{newest_overall.data[0].content.featured_image | resize:'508x374'}}" class="uk-width-1-1" alt="{{newest_overall.data[0].content.title | markdown | strip_html | strip_newlines | truncate: 125}}">
+        <h2 class="overview_teaser__title">{{newest_overall.data[0].content.title | markdown | strip_html | strip_newlines | truncate: 125}}</h2>
       </div>
 
     </a>
 
     <a class="uk-link-reset uk-width-small-1-1 uk-width-medium-1-2 uk-hidden-large" href="/{{newest_overall.data[0].full_slug}}">
       
-      <div class="overview__teaser">
-        <img src="{{newest_overall.data[1].content.featured_image | resize:'508x374'}}" class="uk-width-1-1" alt="{{newest_overall.data[1].content.title}}">
+      <div class="overview_teaser">
+        <img src="{{newest_overall.data[1].content.featured_image | resize:'508x374'}}" class="uk-width-1-1" alt="{{newest_overall.data[1].content.title | markdown | strip_html | strip_newlines | truncate: 125}}">
+        <h2 class="overview_teaser__title">{{newest_overall.data[0].content.title | markdown | strip_html | strip_newlines | truncate: 125}}</h2>
       </div>
 
     </a>
@@ -24,23 +25,27 @@
     <div class="uk-width-large-1-2 uk-hidden-medium uk-hidden-small">
       <div class="uk-grid uk-grid-small">
         <a class="uk-link-reset uk-width-large-1-2 uk-margin-small-bottom" href="/{{newest_overall.data[1].full_slug}}">
-          <div class="overview__teaser">
-            <img src="{{newest_overall.data[1].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[1].content.title}}">
+          <div class="overview_teaser overview_teaser--small">
+            <img src="{{newest_overall.data[1].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[1].content.title | markdown | strip_html | strip_newlines | truncate: 75}}">
+            <h2 class="overview_teaser__title">{{newest_overall.data[1].content.title | markdown | strip_html | strip_newlines | truncate: 75}}</h2>
           </div>
         </a>
         <a class="uk-link-reset uk-width-large-1-2 uk-margin-small-bottom" href="/{{newest_overall.data[2].full_slug}}">
-          <div class="overview__teaser">
-          <img src="{{newest_overall.data[2].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[2].content.title}}">
+          <div class="overview_teaser overview_teaser--small">
+            <img src="{{newest_overall.data[2].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[2].content.title | markdown | strip_html | strip_newlines | truncate: 75}}">
+            <h2 class="overview_teaser__title">{{newest_overall.data[2].content.title | markdown | strip_html | strip_newlines | truncate: 75}}</h2>
           </div>
         </a>
         <a class="uk-link-reset uk-width-large-1-2" href="/{{newest_overall.data[3].full_slug}}">
-          <div class="overview__teaser">
-          <img src="{{newest_overall.data[3].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[3].content.title}}">
+          <div class="overview_teaser overview_teaser--small">
+            <img src="{{newest_overall.data[3].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[3].content.title | markdown | strip_html | strip_newlines | truncate: 75}}">
+            <h2 class="overview_teaser__title">{{newest_overall.data[3].content.title | markdown | strip_html | strip_newlines | truncate: 75}}</h2>
           </div>
         </a>
         <a class="uk-link-reset uk-width-large-1-2" href="/{{newest_overall.data[4].full_slug}}">
-          <div class="overview__teaser">
-          <img src="{{newest_overall.data[4].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[4].content.title}}">
+          <div class="overview_teaser overview_teaser--small">
+            <img src="{{newest_overall.data[4].content.featured_image | resize:'265x196'}}" class="uk-width-1-1" alt="{{newest_overall.data[4].content.title | markdown | strip_html | strip_newlines | truncate: 75}}">
+            <h2 class="overview_teaser__title">{{newest_overall.data[4].content.title | markdown | strip_html | strip_newlines | truncate: 75}}</h2>
           </div>
         </a>
       </div>
