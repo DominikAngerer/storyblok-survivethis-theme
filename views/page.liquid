@@ -31,6 +31,7 @@
 </head>
 <body>
   {% include 'fbjs' %}
+  {% set global from story id:'de/settings' %}
 
   <a href="#main" hidden>Skip to main content</a>
 
@@ -44,6 +45,7 @@
   </div>
   {% include 'footer' %}
   {% include 'social_navigation' with class: 'social_navigation--darker' %}
+  {% include 'back_to_top' %}
 
 
   <script type="text/javascript" src="{{ 'assets/js/scripts.js' | asset_url }}"></script>

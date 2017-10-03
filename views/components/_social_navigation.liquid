@@ -1,10 +1,13 @@
 <nav class="uk-container uk-container-center social_navigation uk-clearfix {{class}}">
   <ul>
-    <li><a href="#">Über Survivethis</a></li>
-    <li><a href="#">Das Team</a></li>
-    <li><a href="#">Team beitreten!</a></li>
-    <li><a href="#">Mediadaten</a></li>
-    <li><a href="#">Kontakt</a></li>
-    <li><a href="#">Impressum | Datenschutz</a></li>
+    {% if class == blank %}
+      {% assign to_iterate = global.content.top_navigation %}
+    {% else %}
+      {% assign to_iterate = global.content.footer_navigation %}
+    {% endif %}
+    
+    {% for nav_item in to_iterate %}
+    <li><a href="{{nav_item.link|url}}">{{nav_item.display_name}}</a></li>
+    {% endfor %}
   </ul>
 </nav>

@@ -1,0 +1,11 @@
+<div class="author_box">
+  <div class="uk-grid">
+    <div class="uk-width-1-5">
+      <img class="uk-margin-top uk-margin-bottom" src="{{author.content.image | resize:'100x100' }}" alt="{{author.content.name}}">
+    </div>
+    <div class="uk-width-4-5">
+      <h4 class="author_box__name">{{ author.content.name }}</h4>
+      <div class="author_box__text">{{ author.content.summary | markdown }}</div>
+    </div>
+  </div>
+</div>

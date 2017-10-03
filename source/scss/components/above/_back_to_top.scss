@@ -1,0 +1,13 @@
+.back_to_top {
+  position: fixed;
+  display: block;
+  bottom: 20px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  border: 0px;
+  color: #fff;
+  appearance: none;
+  cursor: pointer;
+  background: $brand-color;
+}

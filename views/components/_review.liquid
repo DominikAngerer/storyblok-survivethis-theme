@@ -3,7 +3,8 @@
   <article class="uk-grid">
     <div class="uk-width-1-1">
       <h1>{{blok.title}}</h1>
-      <sub>Von: {{blok.author}} - {{story.published_at | date: "%d. %b %Y" }}</sub>
+      {% set author from story id:blok.author.value, find_by:'uuid' %}
+      <sub>{{author.content.name}} - {{story.published_at | date: "%d. %b %Y" }}</sub>
     </div>
     <div class="uk-width-medium-2-3 content">
       <img src="{{blok.featured_image}}" alt="{{blok.featured_alt}}" class="uk-margin-bottom uk-width-1-1">
@@ -39,6 +40,7 @@
         </div>
       </div>
 
+      {% include 'author_box' %}
     </div>
 
     {% include 'sidebar' %}
@@ -55,12 +57,12 @@
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "5"
+      "ratingValue": "{{average}}"
     },
     "name": "{{blok.content.title}}",
     "author": {
       "@type": "Person",
-      "name": "{{blok.author}}"
+      "name": "{{author.content.name}}"
     },
     "datePublished": "{{ story.published_at | date: '%Y-%m-%d' }}",
     "reviewBody": "{{ blok.content.summary }}.",

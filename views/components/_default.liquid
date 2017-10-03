@@ -1,7 +1,7 @@
 {{blok._editable}}
 <main id="main" role="main" class="patchnote uk-margin-large-bottom">
   <article class="uk-grid">
-    <div class="uk-width-medium-2-3 content">
+    <div class="{% if blok.disable_sidebar == blank %}uk-width-medium-2-3{% else%}uk-width-1-1{% endif %} content">
   
       {% for item in blok.content %}
         {% include item.component with blok: item %}
@@ -9,6 +9,8 @@
 
     </div>
 
-    {% include 'sidebar' %}
+    {% if blok.disable_sidebar == blank %}
+      {% include 'sidebar' %}
+    {% endif %}
   </article>
 </main>

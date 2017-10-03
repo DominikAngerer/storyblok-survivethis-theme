@@ -1,4 +1,4 @@
-{% set random_news_bottom from stories starts_with:'de', per_page:5, sort_by:'random():asc' %}
+{% set random_news_bottom from stories starts_with:'de', per_page:3, sort_by:'random():asc', is_startpage: false %}
 <ul class="more_articles">
   {% for news in random_news_bottom.data %}
     {% if news.id != story.id and news.content.featured_image != blank %}

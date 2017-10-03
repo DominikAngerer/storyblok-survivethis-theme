@@ -3,7 +3,8 @@
   <article class="uk-grid">
     <div class="uk-width-1-1">
       <h1>{{blok.title|default:story.name}}</h1>
-      <sub>Von: {{blok.author}} - {{story.published_at | date: "%d. %b %Y" }}</sub>
+      {% set author from story id:blok.author.value, find_by:'uuid' %}
+      <sub>{{author.content.name}} - {{story.published_at | date: "%d. %b %Y" }}</sub>
     </div>
     <div class="uk-width-medium-2-3 content">
       {% if blok.featured_image != blank %}
@@ -14,6 +15,7 @@
         {% include item.component with blok: item %}
       {% endfor %}
       
+      {% include 'author_box' %}
     </div>
 
     {% include 'sidebar' %}

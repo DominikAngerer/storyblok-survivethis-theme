@@ -1,0 +1,10 @@
+dependencies:
+  lazysizes: 4.0.0-rc3
+packages:
+  /lazysizes/4.0.0-rc3:
+    resolution:
+      integrity: sha512-FOvVLJ1qWJMuUyDu0z3aLdi4tffW4+W052GIqwHirUhzRJpsMfMOggKEeqsPMy8UeqvDYDzlQyK3DDFZvQpWQw==
+registry: 'http://registry.npmjs.org/'
+shrinkwrapVersion: 3
+specifiers:
+  lazysizes: ^4.0.0-rc3

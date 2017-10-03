@@ -1,9 +1,7 @@
 <nav class="navigation">
   <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="#">Games</a></li>
-    <li><a href="#">Guides</a></li>
-    <li><a href="#">Reviews</a></li>
-    <li><a href="#">Maps</a></li>
+    {% for nav_item in global.content.main_navigation %}
+    <li><a href="{{nav_item.link|url}}">{{nav_item.display_name}}</a></li>
+    {% endfor %}
   </ul>
 </nav>
