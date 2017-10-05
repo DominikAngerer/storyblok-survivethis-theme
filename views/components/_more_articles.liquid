@@ -4,7 +4,11 @@
     {% if news.id != story.id and news.content.featured_image != blank %}
     <li>
       <a href="/{{ news.full_slug }}">
-        <img src="{{ news.content.featured_image | resize:'353x' }}" alt="{{ news.content.featured_alt }}" class="uk-width-1-1">
+        {% if above != blank %}
+        <img src="{{ news.content.featured_image | resize:'353x' }}" alt="{{ news.content.featured_alt }}" class="uk-width-1-1"> 
+        {% else %}
+        <img data-src="{{ news.content.featured_image | resize:'353x' }}" alt="{{ news.content.featured_alt }}" class="uk-width-1-1 lazyload"> 
+        {% endif %}
         <span>{{ news.content.title | default: news.name }}</span>
       </a>
     </li>

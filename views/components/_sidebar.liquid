@@ -1,9 +1,10 @@
 <aside class="uk-width-medium-1-3 sidebar">
 
-  {% include 'more_articles' %}
+  {% include 'more_articles' with above: true %}
 
   <hr>
   <h3>Twitch: Sei Live dabei.</h3>
+
   <iframe
     id="sidebar_twitch"
     data-src="https://player.twitch.tv/?channel=survivethisde&muted=true&autoplay=false&buffered=true"
@@ -11,7 +12,7 @@
     width="350"
     frameborder="0"
     scrolling="no"
-    allowfullscreen="true"
+    allowfullscreen="false"
     buffered="true"
     class="lazyload"
     style="background-image: url('https://img2.storyblok.com/f/40480/75873fa491/survivethis.jpg');
@@ -20,7 +21,9 @@
   </iframe>
 
   <hr>
+
   <h3>Patchnotes:</h3>
+
   {% include 'more_articles' %}
 
 </aside>

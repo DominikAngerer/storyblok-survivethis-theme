@@ -41,11 +41,11 @@
       {% include 'header' %}
       {% include story.content.component with blok: story.content, title: story.name, date: story.created_at %}
     </div>
+    {% include 'footer' %}
+    {% include 'social_navigation' with class: 'social_navigation--darker' %}
+    {% include 'back_to_top' %}
   </div>
 
-  {% include 'footer' %}
-  {% include 'social_navigation' with class: 'social_navigation--darker' %}
-  {% include 'back_to_top' %}
 
 
   <script type="text/javascript" src="{{ 'assets/js/scripts.js' | asset_url }}"></script>
